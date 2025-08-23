@@ -1,174 +1,211 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>BingChiLin</title>
-    </head>
-    <meta charset="" >
-    <body>
-        <style>
-            body {
-                opacity: 1.0;
-                background-size:auto;
-                background-color: crimson;
-                background-image: url(Cementeria.png);
-                display: flex;
+<head>
+    <meta charset="utf-8" />
+    <title>Venta de NFT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: crimson;
+            background-image: url(Cementeria.png);
+            background-size: auto;
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+        .meme-card {
+            width: 15rem;
+            min-width: 15rem;
+            max-width: 15rem;
+            height: 24rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        .cards-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+        }
+        @media (max-width: 900px) {
+            .cards-container {
+                gap: 10px;
+            }
+            .meme-card {
+                width: 10rem;
+                min-width: 10rem;
+                max-width: 10rem;
+                height: 16rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .cards-container {
                 flex-direction: column;
                 align-items: center;
-                padding: 20px;
             }
-            
-            h1 {
-                color: rgb(243, 7, 7);
-                font-size: 60px;
-                font-family: monospace;
-                text-align: center;
-                margin-bottom: 30px;
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            }
-            
-            p {
-                color: rgb(83, 139, 61);
-                font-size: 40px;
-                font-family: monospace;
-                text-align: center;
-                margin: 20px auto;
-                max-width: 80%;
-            }
-            
-            img {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
+        }
+        }
+        @media (max-width: 768px) {
+            .row.justify-content-center > .col-12 {
                 max-width: 100%;
-                height: auto;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+                flex: 0 0 100%;
             }
-        </style>
-        <link href="./prueba.css" rel="stylesheet" type="text/css">
-<!-- Bootstrap CSS CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4" style="width:100%; border-radius:10px;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Nicolás Rojas</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cards</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Más
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Acción</a></li>
-                        <li><a class="dropdown-item" href="#">Otra acción</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Deshabilitado</a>
-                </li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"/>
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
+            .meme-card {
+                margin: 10px auto;
+            }
+        }
+        .section {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            margin: 30px auto;
+            padding: 30px;
+            max-width: 900px;
+        }
+        h1 {
+            color: rgb(243, 7, 7);
+            font-size: 60px;
+            font-family: monospace;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        p {
+            color: rgb(83, 139, 61);
+            font-size: 40px;
+            font-family: monospace;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 80%;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .images-section p {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4" style="width:100%; border-radius:10px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Nicolás Rojas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cards</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Más
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Acción</a></li>
+                            <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Deshabilitado</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"/>
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
         </div>
-    </div>
-</nav>
-
-<!-- Bootstrap JS Bundle CDN (for navbar functionality) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Título principal de la página -->
+    </nav>
+    <div class="section">
         <h1>🎭 VENTA DE MEMES GOD 🎭</h1>
-<div class="container text-center" style="background-color: white; border-radius: 10px; padding: 20px;">
-    <div class="row align-items-center">
-        <div class="col">
-            <div class="card" style="width: 15rem;">
-                <img src="./bailando.gif" class="card-img-top" alt="...">
+    </div>
+    <div class="section">
+  <div class="container">
+    <div class="cards-container"> <!-- NUEVO contenedor en grid -->
+      
+      <div class="card meme-card">
+        <img src="./bailando.gif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text" style="font-size: 20px; font-family: monospace;">
+            Los pasos prohibidos.
+          </p>
+        </div>
+      </div>
+
+      <div class="card meme-card">
+        <img src="./homerosibaila.gif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text" style="font-size: 20px; font-family: monospace;">
+            HOMERO HOMERO HOMERO.
+          </p>
+        </div>
+      </div>
+
+      <div class="card meme-card">
+                <img src="./JESUSBAILA.gif" class="card-img-top" alt="..." style="object-fit: cover; width: 500%; height: 16rem;">
                 <div class="card-body">
-                    <p class="card-text" style="font-size: 20px; font-family: monospace;">Los pasos prohibidos.</p>
+                    <p class="card-text" style="font-size: 20px; font-family: monospace;">
+                        Pagina en ascendencia.
+                    </p>
                 </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card" style="width: 15rem;">
-                <img src="./homerosibaila.gif" class="card-img-top" alt="...">
-                <div class="card-body"></div>
-                    <p class="card-text" style="font-size: 20px; font-family: monospace;">HOMERO HOMERO HOMERO.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card" style="width: 15rem;">
-                <img src="./JESUSBAILA.gif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text" style="font-size: 20px; font-family: monospace;">pagina en ascendencia.</p>
-                </div>
-            </div>
-        </div>
+      </div>
+
     </div>
-</div>
-        <p> <strong> QUE HERMOSO</strong> </p>
-        <img src="./calamardo.gif" alt="Mi imagen de prueba" />
-        <form>
-  <div style="background-color: white; padding: 30px; border-radius: 10px; max-width: 400px; margin: auto;">
-  <form>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </div>
 </div>
 
-        <p>John <strong> CENA</strong> god</p>
+    </div>
+    <div class="section">
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="section images-section">
+        <p><strong>QUE HERMOSO</strong></p>
+        <img src="./calamardo.gif" alt="Mi imagen de prueba" />
+        <p>John <strong>CENA</strong> god</p>
         <img src="./johnxina.png" alt="Mi imagen de prueba" />
-        
-        <p> <strong> TE VOY A DESTROZAR</strong> </p>
+        <p><strong>TE VOY A DESTROZAR</strong></p>
         <img src="./coleccionistaVSvillano.png" alt="Mi imagen de prueba" />
-        
-        <p> <strong> DALE ALEGRIA A TU CUERPO MACARENA</strong> </p>
+        <p><strong>DALE ALEGRIA A TU CUERPO MACARENA</strong></p>
         <img src="./JESUSBAILA.gif" alt="Mi imagen de prueba" />
-        
-        <p> <strong> PARTY HARD</strong> </p>
+        <p><strong>PARTY HARD</strong></p>
         <img src="./bailando.gif" alt="Mi imagen de prueba" />
-        
-        <p> <strong> HOMERO SI BAILA</strong> </p>
+        <p><strong>HOMERO SI BAILA</strong></p>
         <img src="./homerosibaila.gif" alt="Mi imagen de prueba" />
-        
-        <p> <strong> HOMERO CHINO</strong> </p>
+        <p><strong>HOMERO CHINO</strong></p>
         <img src="./HOMEROCHINO.webp" alt="Mi imagen de prueba" />
-        
-        <p> <strong> CONTESTAS?</strong> </p>
+        <p><strong>CONTESTAS?</strong></p>
         <img src="./JOHNPORK.jpg" alt="Mi imagen de prueba" />
-        <video src "">
-    </body>
-    <footer>
-        #identified {
-background-color: skyblue;
-}
-<div id="identified">¡Este div tiene un ID
-especial!</div>
-<div>Este solo es un div regular.</div>
-    <footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

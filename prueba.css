@@ -1,15 +1,14 @@
-p {
-color: rgb(52, 228, 52);
-font-size: 40px;
-font-family:monospace ;
+.meme-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards por fila */
+    gap: 20px;
+    padding: 20px;
 }
 
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    height: auto;
+.meme-card {
+    background: #fff; /* Fondo blanco */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+    text-align: center;
 }
-
-
