@@ -1,3 +1,42 @@
+.seccion-espaciada {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin: 40px auto 80px auto;
+    padding: 30px;
+    max-width: 900px;
+}
+.descripcion-img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: block;
+    margin: 0 auto;
+}
+.descripcion {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.images-section img {
+    width: 320px;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
 .card-img-aspect {
     width: 100%;
     aspect-ratio: 16/10;
@@ -81,6 +120,22 @@ h2 {
     margin: 20px auto;
     max-width: 80%;
 }
+h4 {
+    color: rgb(51, 134, 17);
+    font-size: 40px;
+    font-family: monospace;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 80%;
+}
+h5 {
+    color: rgb(83, 139, 61);
+    font-size: 20px;
+    font-family: monospace;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 80%;
+}
 img {
     display: block;
     margin: 20px auto;
@@ -116,3 +171,8 @@ img {
     padding: 30px;
     max-width: 900px;
     }
+.img-fluid rounded-start {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
