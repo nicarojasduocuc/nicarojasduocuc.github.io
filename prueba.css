@@ -1,3 +1,19 @@
+.card-img-aspect {
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-img-aspect img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
 .meme-cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -27,8 +43,8 @@
 }
 body {
     background-color: crimson;
-    background-image: url(Cementeria.png);
-    background-size: auto;
+    background-image: url(matrix.png);
+    background-size:  auto;
     min-height: 100vh;
     padding: 40px 0;
 }
@@ -39,9 +55,18 @@ body {
     margin: 30px auto;
     padding: 30px;
     max-width: 900px;
+    
+}
+.titulo {
+    background: #000000;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 900px;
 }
 h1 {
-    color: rgb(243, 7, 7);
+    color: rgb(97, 4, 173);
     font-size: 60px;
     text-align: center;
     margin-bottom: 30px;
@@ -82,4 +107,12 @@ img {
         height: 10rem;
     }
 }
-            font-family: monospace;
+
+.formulario {
+    background: #1cdb0a;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 900px;
+    }
