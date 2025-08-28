@@ -189,6 +189,7 @@ img {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    background: #fff;
 }
 
 .catalogo-instagram .card-img-top {
@@ -199,4 +200,11 @@ img {
     border-bottom: 1px solid #eee;
     display: block;
     margin: 0;
+    /* Para máxima calidad en pantallas retina */
+    image-rendering: auto;
+}
+
+.catalogo-instagram .card-body {
+    padding: 18px 24px;
+    text-align: center;
 }
