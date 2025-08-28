@@ -21,4 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
             mensaje.style.color = 'blue';
         }
     });
+
+    // Contacto form
+    const contactoForm = document.getElementById('formContacto');
+    const mensajeContacto = document.getElementById('mensajeContacto');
+
+    if (contactoForm) {
+        contactoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            mensajeContacto.textContent = 'Datos ingresados correctamente';
+            mensajeContacto.style.color = 'green';
+        });
+    }
 });
